@@ -139,14 +139,6 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © 2025 KMF Digital. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-purple-400 text-sm">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-purple-400 text-sm">
-              Terms of Service
-            </a>
-          </div>
         </div>
         <div className="flex items-center justify-center relative top-10">
           <p className="text-gray-400 text-xs">
