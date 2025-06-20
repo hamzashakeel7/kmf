@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./app/components/About";
 import AIDesignGenerator from "./app/components/AiDesign";
@@ -12,17 +13,27 @@ import Team from "./app/components/Team";
 function App() {
   return (
     <>
-      <div>
-        <Navigation />
-        <Hero />
-        <AIDesignGenerator />
-        <About />
-        <Projects />
-        <Team />
-        <Process />
-        <Contact />
-        <Footer />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <AIDesignGenerator />
+              <About />
+              <Projects />
+              <Process />
+              <Contact />
+            </>
+          }
+        />
+
+        {/* Individual pages */}
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/process" element={<Process />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </>
   );
 }

@@ -123,14 +123,12 @@ export default function AIDesignGenerator() {
   };
 
   const handleConvinced = () => {
-    // This would redirect to the form page
     alert("Redirecting to project details form...");
   };
 
   const handleNotConvinced = () => {
     setShowResult(false);
     setGeneratedDesign(null);
-    // Reset form or show alternatives
   };
 
   return (

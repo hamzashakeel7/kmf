@@ -1,8 +1,18 @@
 /* eslint-disable no-unused-vars */
 "use client";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ Import Link
 
 export default function Navigation() {
+  // Map your nav items to routes
+  const links = [
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Projects", path: "/projects" },
+    { label: "Process", path: "/process" },
+    { label: "Contact", path: "/contact" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -18,18 +28,16 @@ export default function Navigation() {
             KMF Digital
           </motion.div>
           <div className="hidden md:flex space-x-8">
-            {["Home", "About", "Projects", "Team", "Process", "Contact"].map(
-              (item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+            {links.map((link) => (
+              <motion.div key={link.label} whileHover={{ y: -2 }}>
+                <Link
+                  to={link.path}
                   className="hover:text-purple-400 transition-colors text-white duration-300"
-                  whileHover={{ y: -2 }}
                 >
-                  {item}
-                </motion.a>
-              )
-            )}
+                  {link.label}
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
